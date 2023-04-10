@@ -41,4 +41,4 @@ if st.button("Analyze"):
     for i in range(scores.shape[0]):
         l = config.id2label[ranking[i]]
         s = scores[ranking[i]]
-        st.write(f"{i + 1}) {l} {np.round(float(s), 4)}")
+        st.write(l, np.round(float(s), 4))
