@@ -18,3 +18,6 @@ sdk_version: 1.17.0
 app_file: app.py
 pinned: false
 ---
+
+My own sentiment anslysis app link: https://huggingface.co/spaces/metaknightccc/sentiment-analysis-app
+Use the trained model from: https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment-latest
