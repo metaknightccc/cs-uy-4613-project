@@ -4,6 +4,7 @@ from transformers import TFAutoModelForSequenceClassification
 from transformers import AutoTokenizer, AutoConfig
 import numpy as np
 from scipy.special import softmax
+import torch
 
 
 def preprocess(text):
