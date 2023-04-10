@@ -26,7 +26,7 @@ model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
 st.title("Sentiment Analysis App")
 
-user_input = st.text_input("input a sentence to analyze", "I'm happy")
+user_input = st.text_input("Input a sentence to analyze", "I'm happy")
 
 if st.button("Analyze"):
 
@@ -41,4 +41,4 @@ if st.button("Analyze"):
     for i in range(scores.shape[0]):
         l = config.id2label[ranking[i]]
         s = scores[ranking[i]]
-        st.write(l, np.round(float(s), 4))
+        st.write(f"{i + 1}) {l} {np.round(float(s), 4)}")
