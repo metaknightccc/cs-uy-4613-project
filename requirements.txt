@@ -3,3 +3,4 @@ transformers
 numpy
 scipy
 torch
+pandas

@@ -4,6 +4,7 @@ from transformers import TFAutoModelForSequenceClassification
 from transformers import BertTokenizerFast, BertForSequenceClassification
 from transformers import AutoTokenizer, AutoConfig
 import numpy as np
+import pandas as pd
 from scipy.special import softmax
 import torch
 
@@ -52,6 +53,8 @@ if st.button("Analyze"):
         input_val = tokenizer(user_input, padding=True, truncation=True, max_length=512, return_tensors="pt")
         output_val = model(**input_val)
         probabilities = torch.sigmoid(output_val.logits)
-        print(output_val)
-        print(probabilities)
-        st.write(probabilities)
+        result_list = probabilities.tolist()[0]
+        df_result = pd.DataFrame(np.array(result_list).reshape((1, 6)),
+                                 columns=("toxic", "severe toxic", "obscene", "threat",
+                                          "insult", "identity hate"))
+        st.table(df_result)
