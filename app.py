@@ -54,6 +54,7 @@ if st.button("Analyze"):
             columns_list.append(l)
         df_result = pd.DataFrame(np.array(result_list).reshape((1, 3)),
                                  columns=(columns_list[0], columns_list[1], columns_list[2]))
+        st.table(df_result)
     else:
         input_val = tokenizer(user_input, padding=True, truncation=True, max_length=512, return_tensors="pt")
         output_val = model(**input_val)
