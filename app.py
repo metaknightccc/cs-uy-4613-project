@@ -45,10 +45,15 @@ if st.button("Analyze"):
 
         ranking = np.argsort(scores)
         ranking = ranking[::-1]
+        result_list = []
+        columns_list = []
         for i in range(scores.shape[0]):
             l = config.id2label[ranking[i]]
             s = scores[ranking[i]]
-            st.write(f"{i + 1}) {l} {np.round(float(s), 4)}")
+            result_list.append(s)
+            columns_list.append(l)
+        df_result = pd.DataFrame(np.array(result_list).reshape((1, 3)),
+                                 columns=(columns_list[0], columns_list[1], columns_list[2]))
     else:
         input_val = tokenizer(user_input, padding=True, truncation=True, max_length=512, return_tensors="pt")
         output_val = model(**input_val)
