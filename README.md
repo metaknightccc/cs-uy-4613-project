@@ -39,3 +39,4 @@ I randomly picked 8000 comments from the training dataset as the test group. The
 
 The link to the Google Site: https://sites.google.com/nyu.edu/sentiment-analysis-app-ys4325/home
 
+I recorded video is in the repo, video.mp4 file.
