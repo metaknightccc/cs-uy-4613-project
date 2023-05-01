@@ -1,3 +1,4 @@
 optimizer.pt filter=lfs diff=lfs merge=lfs -text
 pytorch_model.bin filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
