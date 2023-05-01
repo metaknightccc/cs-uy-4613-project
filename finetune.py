@@ -9,14 +9,17 @@ import pandas as pd
 import numpy as np
 import torch
 
+# test the available of GPU
 print("CUDA is available:", torch.cuda.is_available())
 print("Number of GPUs:", torch.cuda.device_count())
 print("GPU name:", torch.cuda.get_device_name(0))
 
+# import the training dataset
 df = pd.read_csv("train.csv")
 data = np.array(df)
 # print(df.head())
 
+# select the model we based on
 model_name = "bert-base-uncased"
 
 
@@ -26,6 +29,7 @@ train_labels = data[:, 2:].tolist()
 # print(len(train_labels[0]))
 
 
+# build tre dataset
 class dataset(Dataset):
     def __init__(self, encodings, labels):
         self.encodings = encodings
@@ -44,6 +48,7 @@ tokenizer = BertTokenizerFast.from_pretrained(model_name)
 train_encodings = tokenizer(train_texts, truncation=True, padding=True)
 train_dataset = dataset(train_encodings, train_labels)
 
+# set the arguments
 training_args = TrainingArguments(output_dir='./result',
                                   num_train_epochs=2,
                                   per_device_train_batch_size=8,

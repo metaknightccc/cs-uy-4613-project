@@ -33,3 +33,9 @@ Dataset from: https://www.kaggle.com/competitions/jigsaw-toxic-comment-classific
 saved folder is the trained model based on the train.csv
 
 finetune.py is used to train the dataset. test.py is used to test hugging face pipeline and the fine-tuned model. From https://www.youtube.com/watch?v=GSt00_-0ncQ&t=470s
+
+## Milestone-4
+I randomly picked 8000 comments from the training dataset as the test group. The code and test result is recorded in the file performance_test.ipynb.
+
+The link to the Google Site: https://sites.google.com/nyu.edu/sentiment-analysis-app-ys4325/home
+

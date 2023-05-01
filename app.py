@@ -22,6 +22,7 @@ st.title("Sentiment Analysis App")
 
 user_input = st.text_input("Input a sentence to analyze", "I'm happy")
 
+# Select model between pre-trained model and the fine-tuning model
 option = st.selectbox("Select Model", ("pre-trained", "fine-tuning"))
 
 if option == "pre-trained":
